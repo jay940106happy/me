@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>曹曜傑</title>
+  <meta name="description" content="曹曜傑的履歷">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #18202a;
+      --muted: #647184;
+      --line: #d9e0e8;
+      --paper: #f7f3ea;
+      --panel: #fffdf8;
+      --accent: #23615a;
+      --accent-2: #b2462f;
+      --soft: #e9f2ee;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Noto Sans TC", "Microsoft JhengHei", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--ink);
+      background:
+        linear-gradient(90deg, rgba(35, 97, 90, 0.08) 0 1px, transparent 1px 100%),
+        linear-gradient(180deg, rgba(178, 70, 47, 0.06), transparent 38rem),
+        var(--paper);
+      background-size: 42px 42px, auto, auto;
+      line-height: 1.7;
+      letter-spacing: 0;
+    }
+
+    a {
+      color: inherit;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.22em;
+      overflow-wrap: anywhere;
+    }
+
+    .page {
+      width: min(calc(100% - 40px), 1120px);
+      min-height: 100vh;
+      margin: 0 auto;
+      padding: 44px 0;
+    }
+
+    .resume {
+      display: grid;
+      grid-template-columns: 330px minmax(0, 1fr);
+      min-width: 0;
+      min-height: calc(100vh - 88px);
+      background: var(--panel);
+      border: 1px solid rgba(24, 32, 42, 0.12);
+      box-shadow: 0 24px 70px rgba(24, 32, 42, 0.12);
+    }
+
+    aside {
+      padding: 34px 28px;
+      background: #eef3ef;
+      border-right: 1px solid var(--line);
+    }
+
+    main {
+      padding: 42px 52px 46px;
+    }
+
+    .portrait {
+      width: 100%;
+      aspect-ratio: 1 / 1.12;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      border: 1px solid rgba(24, 32, 42, 0.14);
+      margin-bottom: 28px;
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--accent-2);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.4rem, 6vw, 5.4rem);
+      line-height: 0.98;
+      letter-spacing: 0;
+    }
+
+    .role {
+      margin: 22px 0 0;
+      max-width: 760px;
+      color: #34404d;
+      font-size: clamp(1.05rem, 2vw, 1.35rem);
+      line-height: 1.75;
+    }
+
+    .headline {
+      padding-bottom: 34px;
+      border-bottom: 2px solid var(--ink);
+    }
+
+    .section {
+      display: grid;
+      grid-template-columns: 128px minmax(0, 1fr);
+      gap: 28px;
+      padding: 30px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    h2 {
+      margin: 0;
+      color: var(--accent);
+      font-size: 0.94rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    p {
+      margin: 0;
+      overflow-wrap: anywhere;
+    }
+
+    .stack {
+      display: grid;
+      gap: 16px;
+    }
+
+    .side-block {
+      min-width: 0;
+      padding-top: 24px;
+      border-top: 1px solid rgba(24, 32, 42, 0.14);
+      margin-top: 24px;
+    }
+
+    .side-block:first-of-type {
+      margin-top: 0;
+    }
+
+    .side-block h2 {
+      margin-bottom: 12px;
+    }
+
+    .side-block p,
+    .side-block li {
+      color: #34404d;
+      font-size: 0.96rem;
+    }
+
+    .contact-list,
+    .skill-list,
+    .project-list,
+    .work-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 9px;
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-list li {
+      max-width: 100%;
+      padding: 5px 9px;
+      background: rgba(255, 253, 248, 0.74);
+      border: 1px solid rgba(24, 32, 42, 0.1);
+      font-size: 0.88rem;
+      overflow-wrap: anywhere;
+    }
+
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px 26px;
+    }
+
+    .highlight {
+      padding-left: 18px;
+      border-left: 3px solid var(--accent);
+    }
+
+    .highlight strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 1rem;
+    }
+
+    .highlight span {
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .project-list {
+      border-top: 1px solid var(--line);
+    }
+
+    .project-list li {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .project-list strong {
+      display: block;
+      margin-bottom: 3px;
+      font-size: 1.18rem;
+      line-height: 1.35;
+    }
+
+    .project-list span {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .project-tech {
+      display: block;
+      margin-top: 8px;
+      color: #34404d;
+      font-size: 0.92rem;
+    }
+
+    .project-tech::before {
+      content: "使用技術：";
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .project-list a {
+      display: inline-block;
+      margin: 0 0 8px;
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 0.92rem;
+      white-space: normal;
+    }
+
+    .work-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .work-list li {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 18px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .work-list li:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .work-list strong {
+      display: block;
+      font-size: 1.02rem;
+    }
+
+    .work-list span,
+    .work-list time {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .work-list time {
+      white-space: nowrap;
+    }
+
+    .note {
+      padding: 18px 20px;
+      background: var(--soft);
+      border-left: 4px solid var(--accent-2);
+      color: #314039;
+    }
+
+    @media (max-width: 860px) {
+      .page {
+        width: min(calc(100% - 24px), 680px);
+        padding: 18px 0;
+      }
+
+      .resume {
+        grid-template-columns: 1fr;
+      }
+
+      aside {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      main {
+        padding: 32px 24px 36px;
+      }
+
+      .portrait {
+        max-width: 260px;
+      }
+
+      .section,
+      .highlight-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        gap: 12px;
+      }
+    }
+
+    @media (max-width: 540px) {
+      aside {
+        padding: 24px 20px;
+      }
+
+      main {
+        padding: 28px 20px 32px;
+      }
+
+      .project-list li {
+        gap: 8px;
+      }
+
+      .work-list li {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+
+      .skill-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="resume">
+      <aside aria-label="個人資訊">
+        <img class="portrait" src="照片.jpeg" alt="Jay 的履歷照片">
+
+        <section class="side-block">
+          <h2>Profile</h2>
+          <p>台北護理健康大學資訊管理系四年級</p>
+        </section>
+
+        <section class="side-block">
+          <h2>Focus</h2>
+          <ul class="skill-list">
+            <li>網站架設</li>
+            <li>AI Agent 應用</li>
+            <li>AI API 串接</li>
+            <li>資料分析</li>
+            <li>系統更新自動化</li>
+            <li>程式量化投資</li>
+          </ul>
+        </section>
+
+        <section class="side-block">
+          <h2>Links</h2>
+          <ul class="contact-list">
+            <li><a href="https://github.com/jay940106happy" target="_blank" rel="noreferrer">github.com/jay940106happy</a></li>
+          </ul>
+        </section>
+      </aside>
+
+      <main>
+        <header class="headline">
+          <h1>曹曜傑</h1>
+        </header>
+
+        <section class="section" aria-labelledby="about-title">
+          <h2 id="about-title">關於我</h2>
+          <div class="stack">
+            <p>我目前就讀於台北護理健康大學資訊管理系四年級，高中畢業於關西高中商業管理。</p>
+            <p>我對 AI 技術有高度熱忱，長期關注生成式 AI、AI Agent、程式開發輔助工具等新技術，我是個樂於學習的人，尤其是非常樂於學習AI新技術以及利用它來解決問題，我認為我也是個抗壓性強且自律的人，執行量化投資實盤經驗讓我磨練到紀律與抗壓性。</p>
+          </div>
+        </section>
+
+        <section class="section" aria-labelledby="experience-title">
+          <h2 id="experience-title">使用過的技術和經驗</h2>
+          <div class="stack">
+            <p>語言：Python、JavaScript、TypeScript、HTML、CSS、SQL、php、Linux基本指令</p>
+            <p>後端框架：FastAPI</p>
+            <p>前端框架：React、Vue</p>
+            <p>資料庫：MySQL、PostgreSQL</p>
+            <p>雲端服務：Vercel、Render、Vultr、infinityfree</p>
+            <p>工作自動化: windows排程、n8n、codex排程</p>
+            <p>AI模型及工具：Gemini、NotebookLM、ChatGPT Codex、Claude Code、Cursor、Manus、Ollama 本機模型部署、OpenClaw 等工具。</p>
+            <p>我也是一名量化投資實作者，已自行架設程式交易與量化分析系統，具備約兩年實盤程式交易、策略維護、資料更新與自動化系統管理經驗。</p>
+          </div>
+        </section>
+
+        <section class="section" aria-labelledby="work-title">
+          <h2 id="work-title">Work</h2>
+          <ul class="work-list">
+            <li>
+              <div>
+                <strong>三商家購股份有限公司</strong>
+                <span>門市人員</span>
+              </div>
+              <time datetime="2024-03/2024-09">2024-03 ~ 2024-09</time>
+            </li>
+            <li>
+              <div>
+                <strong>夏璽玥網路有限公司</strong>
+                <span>行政人員</span>
+              </div>
+              <time datetime="2025-06/2025-08">2025-06 ~ 2025-08</time>
+            </li>
+          </ul>
+        </section>
+
+        <section class="section" aria-labelledby="projects-title">
+          <h2 id="projects-title">Projects</h2>
+          <ul class="project-list">
+            <li>
+              <div>
+                <strong>metriva台股智選網 demo</strong>
+                <a href="http://45.77.24.11/" target="_blank" rel="noreferrer">http://45.77.24.11/</a>
+                <span>台股選股網站，可以觀察市場和個股圖表，並使用自訂條件進行選股和回測。</span>
+                <span class="project-tech">Python(FastAPI)、 React、 PostgreSQL、nginx</span>
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>皇室戰爭-團隊網站</strong>
+                <a href="https://royalenanatsu.rf.gd/?i=1" target="_blank" rel="noreferrer">https://royalenanatsu.rf.gd/?i=1</a>
+                <span>接案架設的遊戲團隊網站，展示該團隊成員、歷史活動以及課程販售資訊，並且該網站有遊戲相關功能以及後台管理系統方便團長自主更新網站內容</span>
+                <span class="project-tech">html、 css、 javascript、php、mysql</span>
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>五子棋自動程式</strong>
+                <a href="https://github.com/jay940106happy/gomoku" target="_blank" rel="noreferrer">https://github.com/jay940106happy/gomoku</a>
+                <span>利用selenium瀏覽器將遊戲棋盤狀態抓取，並且利用Rapfi引擎計算，實現gomoku.com五子棋遊戲自動下棋自動上分</span>
+                <span class="project-tech">Python(selenium)</span>
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>2048自動程式</strong>
+                <a href="https://github.com/jay940106happy/2048" target="_blank" rel="noreferrer">https://github.com/jay940106happy/2048</a>
+                <span>用Expectimax算法實現2048遊戲自動玩</span>
+                <span class="project-tech">C++、Python(selenium)、</span>
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>附近餐廳抽取器</strong>
+                <a href="https://github.com/jay940106happy/restaurant" target="_blank" rel="noreferrer">https://github.com/jay940106happy/restaurant</a>
+                <span>抓取 OpenStreetMap 餐廳資料，使用者可以設定距離自身定位一定範圍內，隨機抽取一間餐廳</span>
+                <span class="project-tech">Python(NumPy、FastAPI)、Vue</span>
+              </div>
+            </li>
+
+          </ul>
+        </section>
+
+        <section class="section" aria-labelledby="goal-title">
+          <h2 id="goal-title">期許</h2>
+          <p class="note">期望未來有機會能將自身對 AI 工具、程式開發、自動化流程與資料分析的實作經驗，協助團隊更有效率地解決實務問題。</p>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
